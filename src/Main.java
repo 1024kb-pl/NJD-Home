@@ -1,3 +1,5 @@
+import factories.HomeFactory;
+import factories.HomeFactoryImpl;
 import models.Home;
 
 import java.io.BufferedReader;
@@ -9,7 +11,7 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        HomeFactory homeFactory = HomeFactory.getInstance();
+        HomeFactory homeFactory = HomeFactoryImpl.getInstance();
 
         try {
             BufferedReader bufferedReader = new BufferedReader(new FileReader("home"));
@@ -20,7 +22,7 @@ public class Main {
                 line = bufferedReader.readLine();
             }
 
-            Home home = homeFactory.createHome(lines);
+            Home home = homeFactory.createHome(lines, "#");
             System.out.println("Home: " + home);
         } catch (FileNotFoundException e) {
             e.printStackTrace();

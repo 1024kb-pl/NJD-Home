@@ -1,3 +1,5 @@
+package factories;
+
 import models.Home;
 import models.Room;
 import models.properties.HomeProperty;
@@ -7,12 +9,11 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
-public class HomeFactory {
-    private static final HomeFactory instance = new HomeFactory();
-    private static final String SEPARATOR = "#";
-    private final RoomFactory roomFactory = RoomFactory.getInstance();
+public class HomeFactoryImpl implements HomeFactory {
+    private static final HomeFactory instance = new HomeFactoryImpl();
+    private final RoomFactory roomFactory = RoomFactoryImpl.getInstance();
 
-    private HomeFactory() {
+    private HomeFactoryImpl() {
 
     }
 
@@ -20,9 +21,9 @@ public class HomeFactory {
         return instance;
     }
 
-    public Home createHome(List<String> homeStr) {
+    public Home createHome(List<String> homeStr, String separator) {
         int indexLine = 0;
-        final Map<HomeProperty, String> homeDetails = getHomeDetails(homeStr.get(indexLine));
+        final Map<HomeProperty, String> homeDetails = getHomeDetails(homeStr.get(indexLine), separator);
         indexLine++;
 
         final String homeName = homeDetails.get(HomeProperty.HOME_NAME);
@@ -33,15 +34,15 @@ public class HomeFactory {
 
         for (int i = 0; i < roomCount; i++) {
             List<String> roomDetailsList = new LinkedList<>(homeStr.subList(indexLine, indexLine+roomCount + 1));
-            final Room room = roomFactory.createRoom(roomDetailsList);
+            final Room room = roomFactory.createRoom(roomDetailsList, separator);
             rooms.add(room);
         }
 
         return new Home(homeName, homeAddress, homeMadeCount, rooms);
     }
 
-    private Map<HomeProperty, String> getHomeDetails(String homeDetailsStr) {
-        final String [] homeDetailsValues = homeDetailsStr.split(SEPARATOR);
+    private Map<HomeProperty, String> getHomeDetails(String homeDetailsStr, String separator) {
+        final String [] homeDetailsValues = homeDetailsStr.split(separator);
         final Map<HomeProperty, String> homeDetails = new EnumMap<>(HomeProperty.class);
 
         homeDetails.put(HomeProperty.HOME_NAME, homeDetailsValues[0]);

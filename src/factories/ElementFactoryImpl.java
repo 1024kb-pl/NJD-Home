@@ -1,3 +1,5 @@
+package factories;
+
 import models.Element;
 import models.Position;
 import models.Size;
@@ -6,11 +8,10 @@ import models.properties.ElementProperty;
 import java.util.EnumMap;
 import java.util.Map;
 
-public class ElementFactory {
-    private static final ElementFactory instance = new ElementFactory();
-    private static final String SEPARATOR = "#";
+public class ElementFactoryImpl implements ElementFactory {
+    private static final ElementFactory instance = new ElementFactoryImpl();
 
-    private ElementFactory() {
+    private ElementFactoryImpl() {
 
     }
 
@@ -18,8 +19,8 @@ public class ElementFactory {
         return instance;
     }
 
-    public Element createElement(String elementDetailsStr) {
-        final Map<ElementProperty, String> elementDetails = getElementProperty(elementDetailsStr);
+    public Element createElement(String elementDetailsStr, String separator) {
+        final Map<ElementProperty, String> elementDetails = getElementProperty(elementDetailsStr, separator);
 
         final String elementName = elementDetails.get(ElementProperty.ELEMENT_NAME);
         final float weight = Float.valueOf(elementDetails.get(ElementProperty.WEIGHT));
@@ -29,8 +30,8 @@ public class ElementFactory {
         return new Element(elementName, position, weight, size);
     }
 
-    private Map<ElementProperty,String> getElementProperty(String elementDetailsStr) {
-        final String [] elementDetailsValues = elementDetailsStr.split(SEPARATOR);
+    private Map<ElementProperty,String> getElementProperty(String elementDetailsStr, String separator) {
+        final String [] elementDetailsValues = elementDetailsStr.split(separator);
         final Map<ElementProperty, String> elementDetails = new EnumMap<>(ElementProperty.class);
 
         elementDetails.put(ElementProperty.ELEMENT_NAME, elementDetailsValues[0]);
