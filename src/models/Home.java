@@ -1,4 +1,5 @@
-import java.util.LinkedList;
+package models;
+
 import java.util.List;
 import java.util.Objects;
 
@@ -6,12 +7,13 @@ public class Home {
     private final String homeName;
     private final String address;
     private final int homemadeCount;
-    private final List<Room> rooms = new LinkedList<>();
+    private final List<Room> rooms;
 
-    public Home(String homeName, String address, int homemadeCount) {
+    public Home(String homeName, String address, int homemadeCount, List<Room> rooms) {
         this.homeName = homeName;
         this.address = address;
         this.homemadeCount = homemadeCount;
+        this.rooms = rooms;
     }
 
     public String getHomeName() {
@@ -30,9 +32,6 @@ public class Home {
         return rooms;
     }
 
-    public void addRoom(Room room) {
-        rooms.add(room);
-    }
 
     @Override
     public boolean equals(Object o) {
@@ -53,7 +52,7 @@ public class Home {
 
     @Override
     public String toString() {
-        return "Home{" +
+        return "models.Home{" +
                 "homeName='" + homeName + '\'' +
                 ", address='" + address + '\'' +
                 ", homemadeCount=" + homemadeCount +

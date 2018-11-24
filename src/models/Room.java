@@ -1,3 +1,5 @@
+package models;
+
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
@@ -7,13 +9,14 @@ public class Room {
     private final String roomColorHex;
     private final Float powierzchnia;
     private final Float height;
-    private final List<Element> elements = new LinkedList<>();
+    private final List<Element> elements;
 
-    public Room(String roomName, String roomColorHex, Float powierzchnia, Float height) {
+    public Room(String roomName, String roomColorHex, Float powierzchnia, Float height, List<Element> elements) {
         this.roomName = roomName;
         this.roomColorHex = roomColorHex;
         this.powierzchnia = powierzchnia;
         this.height = height;
+        this.elements = elements;
     }
 
     public String getRoomName() {
