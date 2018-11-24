@@ -3,29 +3,29 @@ package models;
 import java.util.List;
 import java.util.Objects;
 
-public class Home {
-    private final String homeName;
+public class Home implements House {
+    private final String name;
     private final String address;
-    private final int homemadeCount;
+    private final int householdCount;
     private final List<Room> rooms;
 
-    public Home(String homeName, String address, int homemadeCount, List<Room> rooms) {
-        this.homeName = homeName;
+    public Home(String homeName, String address, int householdCount, List<Room> rooms) {
+        this.name = homeName;
         this.address = address;
-        this.homemadeCount = homemadeCount;
+        this.householdCount = householdCount;
         this.rooms = rooms;
     }
 
-    public String getHomeName() {
-        return homeName;
+    public String getName() {
+        return name;
     }
 
     public String getAddress() {
         return address;
     }
 
-    public int getHomemadeCount() {
-        return homemadeCount;
+    public int getHouseholdCount() {
+        return householdCount;
     }
 
     public List<Room> getRooms() {
@@ -38,8 +38,8 @@ public class Home {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Home home = (Home) o;
-        return homemadeCount == home.homemadeCount &&
-                Objects.equals(homeName, home.homeName) &&
+        return householdCount == home.householdCount &&
+                Objects.equals(name, home.name) &&
                 Objects.equals(address, home.address) &&
                 Objects.equals(rooms, home.rooms);
     }
@@ -47,15 +47,15 @@ public class Home {
     @Override
     public int hashCode() {
 
-        return Objects.hash(homeName, address, homemadeCount, rooms);
+        return Objects.hash(name, address, householdCount, rooms);
     }
 
     @Override
     public String toString() {
         return "models.Home{" +
-                "homeName='" + homeName + '\'' +
+                "name='" + name + '\'' +
                 ", address='" + address + '\'' +
-                ", homemadeCount=" + homemadeCount +
+                ", householdCount=" + householdCount +
                 ", rooms=" + rooms +
                 '}';
     }

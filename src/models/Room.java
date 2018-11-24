@@ -3,27 +3,28 @@ package models;
 import java.util.List;
 import java.util.Objects;
 
-public class Room {
-    private final String roomName;
-    private final String roomColorHex;
+public class Room implements Space {
+    private final String name;
+    private final String colorHex;
     private final Float area;
     private final Float height;
     private final List<Element> elements;
 
-    public Room(String roomName, String roomColorHex, Float area, Float height, List<Element> elements) {
-        this.roomName = roomName;
-        this.roomColorHex = roomColorHex;
+    public Room(String name, String roomColorHex, Float area, Float height, List<Element> elements) {
+        this.name = name;
+        this.colorHex = roomColorHex;
         this.area = area;
         this.height = height;
         this.elements = elements;
     }
 
-    public String getRoomName() {
-        return roomName;
+    public String getName() {
+        return name;
     }
 
-    public String getRoomColorHex() {
-        return roomColorHex;
+    @Override
+    public String getColorHex() {
+        return colorHex;
     }
 
     public Float getArea() {
@@ -43,8 +44,8 @@ public class Room {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Room room = (Room) o;
-        return Objects.equals(roomName, room.roomName) &&
-                Objects.equals(roomColorHex, room.roomColorHex) &&
+        return Objects.equals(name, room.name) &&
+                Objects.equals(colorHex, room.colorHex) &&
                 Objects.equals(area, room.area) &&
                 Objects.equals(height, room.height) &&
                 Objects.equals(elements, room.elements);
@@ -53,14 +54,14 @@ public class Room {
     @Override
     public int hashCode() {
 
-        return Objects.hash(roomName, roomColorHex, area, height, elements);
+        return Objects.hash(name, colorHex, area, height, elements);
     }
 
     @Override
     public String toString() {
         return "Room{" +
-                "roomName='" + roomName + '\'' +
-                ", roomColorHex='" + roomColorHex + '\'' +
+                "name='" + name + '\'' +
+                ", colorHex='" + colorHex + '\'' +
                 ", area=" + area +
                 ", height=" + height +
                 ", elements=" + elements +
