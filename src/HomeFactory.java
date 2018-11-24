@@ -1,4 +1,7 @@
 import models.*;
+import models.properties.ElementProperty;
+import models.properties.HomeProperty;
+import models.properties.RoomProperty;
 
 import java.util.*;
 
