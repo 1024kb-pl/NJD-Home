@@ -56,4 +56,15 @@ public class Room {
 
         return Objects.hash(roomName, roomColorHex, powierzchnia, height, elements);
     }
+
+    @Override
+    public String toString() {
+        return "Room{" +
+                "roomName='" + roomName + '\'' +
+                ", roomColorHex='" + roomColorHex + '\'' +
+                ", powierzchnia=" + powierzchnia +
+                ", height=" + height +
+                ", elements=" + elements +
+                '}';
+    }
 }

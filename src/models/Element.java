@@ -47,4 +47,14 @@ public class Element {
 
         return Objects.hash(elementName, position, weight, size);
     }
+
+    @Override
+    public String toString() {
+        return "Element{" +
+                "elementName='" + elementName + '\'' +
+                ", position=" + position +
+                ", weight=" + weight +
+                ", size=" + size +
+                '}';
+    }
 }
