@@ -1,5 +1,5 @@
 package models.properties;
 
 public enum HomeProperty {
-    NAME, ADDRESS, HOMEMADE_COUNT, ROOMS_COUNT
+    HOME_NAME, ADDRESS, HOMEMADE_COUNT, ROOMS_COUNT
 }

@@ -40,4 +40,13 @@ public class Size {
 
         return Objects.hash(length, width, height);
     }
+
+    @Override
+    public String toString() {
+        return "Size{" +
+                "length=" + length +
+                ", width=" + width +
+                ", height=" + height +
+                '}';
+    }
 }

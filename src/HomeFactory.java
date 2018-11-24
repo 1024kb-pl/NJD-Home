@@ -25,7 +25,7 @@ public class HomeFactory {
         final Map<HomeProperty, String> homeDetails = getHomeDetails(homeStr.get(indexLine));
         indexLine++;
 
-        final String homeName = homeDetails.get(HomeProperty.NAME);
+        final String homeName = homeDetails.get(HomeProperty.HOME_NAME);
         final String homeAddress = homeDetails.get(HomeProperty.ADDRESS);
         final int homeMadeCount = Integer.valueOf(homeDetails.get(HomeProperty.HOMEMADE_COUNT));
         final int roomCount = Integer.valueOf(homeDetails.get(HomeProperty.ROOMS_COUNT));
@@ -44,7 +44,7 @@ public class HomeFactory {
         final String [] homeDetailsValues = homeDetailsStr.split(SEPARATOR);
         final Map<HomeProperty, String> homeDetails = new EnumMap<>(HomeProperty.class);
 
-        homeDetails.put(HomeProperty.NAME, homeDetailsValues[0]);
+        homeDetails.put(HomeProperty.HOME_NAME, homeDetailsValues[0]);
         homeDetails.put(HomeProperty.ADDRESS, homeDetailsValues[1]);
         homeDetails.put(HomeProperty.HOMEMADE_COUNT, homeDetailsValues[2]);
         homeDetails.put(HomeProperty.ROOMS_COUNT, homeDetailsValues[3]);

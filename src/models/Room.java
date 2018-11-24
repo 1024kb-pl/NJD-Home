@@ -1,20 +1,19 @@
 package models;
 
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
 
 public class Room {
     private final String roomName;
     private final String roomColorHex;
-    private final Float powierzchnia;
+    private final Float area;
     private final Float height;
     private final List<Element> elements;
 
-    public Room(String roomName, String roomColorHex, Float powierzchnia, Float height, List<Element> elements) {
+    public Room(String roomName, String roomColorHex, Float area, Float height, List<Element> elements) {
         this.roomName = roomName;
         this.roomColorHex = roomColorHex;
-        this.powierzchnia = powierzchnia;
+        this.area = area;
         this.height = height;
         this.elements = elements;
     }
@@ -27,8 +26,8 @@ public class Room {
         return roomColorHex;
     }
 
-    public Float getPowierzchnia() {
-        return powierzchnia;
+    public Float getArea() {
+        return area;
     }
 
     public Float getHeight() {
@@ -46,7 +45,7 @@ public class Room {
         Room room = (Room) o;
         return Objects.equals(roomName, room.roomName) &&
                 Objects.equals(roomColorHex, room.roomColorHex) &&
-                Objects.equals(powierzchnia, room.powierzchnia) &&
+                Objects.equals(area, room.area) &&
                 Objects.equals(height, room.height) &&
                 Objects.equals(elements, room.elements);
     }
@@ -54,7 +53,7 @@ public class Room {
     @Override
     public int hashCode() {
 
-        return Objects.hash(roomName, roomColorHex, powierzchnia, height, elements);
+        return Objects.hash(roomName, roomColorHex, area, height, elements);
     }
 
     @Override
@@ -62,7 +61,7 @@ public class Room {
         return "Room{" +
                 "roomName='" + roomName + '\'' +
                 ", roomColorHex='" + roomColorHex + '\'' +
-                ", powierzchnia=" + powierzchnia +
+                ", area=" + area +
                 ", height=" + height +
                 ", elements=" + elements +
                 '}';

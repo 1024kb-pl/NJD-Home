@@ -40,4 +40,13 @@ public class Position {
 
         return Objects.hash(positionX, positionY, positionZ);
     }
+
+    @Override
+    public String toString() {
+        return "Position{" +
+                "positionX=" + positionX +
+                ", positionY=" + positionY +
+                ", positionZ=" + positionZ +
+                '}';
+    }
 }

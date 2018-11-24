@@ -28,7 +28,7 @@ public class RoomFactory {
 
         final String roomName = roomDetails.get(RoomProperty.ROOM_NAME);
         final String roomColor = roomDetails.get(RoomProperty.ROOM_COLOR_HEX);
-        final float powierzchnia = Float.valueOf(roomDetails.get(RoomProperty.POWIERZCHNIA));
+        final float powierzchnia = Float.valueOf(roomDetails.get(RoomProperty.AREA));
         final float height = Float.valueOf(roomDetails.get(RoomProperty.HEIGHT));
         final int elementsCount = Integer.valueOf(roomDetails.get(RoomProperty.COUNT_ELEMENTS));
 
@@ -50,7 +50,7 @@ public class RoomFactory {
         roomDetails.put(RoomProperty.ROOM_NAME, roomDetailsValues[0]);
         roomDetails.put(RoomProperty.ROOM_COLOR_HEX, roomDetailsValues[1]);
         roomDetails.put(RoomProperty.HEIGHT, roomDetailsValues[2]);
-        roomDetails.put(RoomProperty.POWIERZCHNIA, roomDetailsValues[3]);
+        roomDetails.put(RoomProperty.AREA, roomDetailsValues[3]);
         roomDetails.put(RoomProperty.COUNT_ELEMENTS, roomDetailsValues[4]);
 
 
