@@ -2,7 +2,7 @@ package models;
 
 import java.util.Objects;
 
-public class Element implements Item {
+public class Element {
     private final String elementName;
     private final Position position;
     private final Float weight;

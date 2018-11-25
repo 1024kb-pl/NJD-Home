@@ -2,7 +2,7 @@ package models;
 
 import java.util.Objects;
 
-public class Size implements ItemSize{
+public class Size {
     private final Float length;
     private final Float width;
     private final Float height;

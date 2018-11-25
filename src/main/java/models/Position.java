@@ -2,7 +2,7 @@ package models;
 
 import java.util.Objects;
 
-public class Position implements Position3D{
+public class Position {
     private final Float positionX;
     private final Float positionY;
     private final Float positionZ;

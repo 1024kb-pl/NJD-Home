@@ -3,7 +3,7 @@ package models;
 import java.util.List;
 import java.util.Objects;
 
-public class Room implements Space {
+public class Room {
     private final String name;
     private final String colorHex;
     private final Float area;
@@ -22,7 +22,6 @@ public class Room implements Space {
         return name;
     }
 
-    @Override
     public String getColorHex() {
         return colorHex;
     }
