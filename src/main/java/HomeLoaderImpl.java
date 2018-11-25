@@ -42,8 +42,6 @@ public class HomeLoaderImpl implements HomeLoader {
             }
 
             bufferedReader.close();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
