@@ -33,8 +33,10 @@ public class HomeFactoryImpl implements HomeFactory {
         final List<Room> rooms = new LinkedList<>();
 
         for (int i = 0; i < roomCount; i++) {
-            List<String> roomDetailsList = new LinkedList<>(homeStr.subList(indexLine, indexLine+roomCount + 2));
+            List<String> roomDetailsList = new LinkedList<>(homeStr.subList(indexLine, homeStr.size()));
             final Room room = roomFactory.createRoom(roomDetailsList, separator);
+            final int roomElementsCount = room.getElements().size();
+            indexLine  += roomElementsCount + 1;
             rooms.add(room);
         }
 

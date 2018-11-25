@@ -40,6 +40,8 @@ public class HomeLoaderImpl implements HomeLoader {
                 lines.add(line);
                 line = bufferedReader.readLine();
             }
+
+            bufferedReader.close();
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {

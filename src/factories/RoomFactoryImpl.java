@@ -28,7 +28,7 @@ public class RoomFactoryImpl implements RoomFactory{
 
         final String roomName = roomDetails.get(RoomProperty.ROOM_NAME);
         final String roomColor = roomDetails.get(RoomProperty.ROOM_COLOR_HEX);
-        final float powierzchnia = Float.valueOf(roomDetails.get(RoomProperty.AREA));
+        final float area = Float.valueOf(roomDetails.get(RoomProperty.AREA));
         final float height = Float.valueOf(roomDetails.get(RoomProperty.HEIGHT));
         final int elementsCount = Integer.valueOf(roomDetails.get(RoomProperty.COUNT_ELEMENTS));
 
@@ -40,7 +40,7 @@ public class RoomFactoryImpl implements RoomFactory{
             indexLine++;
         }
 
-        return new Room(roomName, roomColor, powierzchnia, height, roomElements);
+        return new Room(roomName, roomColor, area, height, roomElements);
     }
 
     private Map<RoomProperty,String> getRoomDetails(String roomDetailsStr, String separator) {
