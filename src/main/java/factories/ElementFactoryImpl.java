@@ -8,14 +8,14 @@ import models.properties.ElementProperty;
 import java.util.EnumMap;
 import java.util.Map;
 
-public class ElementFactoryImpl implements ElementFactory {
+class ElementFactoryImpl implements ElementFactory {
     private static final ElementFactory instance = new ElementFactoryImpl();
 
     private ElementFactoryImpl() {
 
     }
 
-    public static ElementFactory getInstance() {
+    static ElementFactory getInstance() {
         return instance;
     }
 

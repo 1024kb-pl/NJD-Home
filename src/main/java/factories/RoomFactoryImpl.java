@@ -9,7 +9,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
-public class RoomFactoryImpl implements RoomFactory{
+class RoomFactoryImpl implements RoomFactory{
     private final static RoomFactory instance = new RoomFactoryImpl();
     private final ElementFactory elementFactory = ElementFactoryImpl.getInstance();
 
@@ -17,7 +17,7 @@ public class RoomFactoryImpl implements RoomFactory{
 
     }
 
-    public static RoomFactory getInstance() {
+    static RoomFactory getInstance() {
         return instance;
     }
 
